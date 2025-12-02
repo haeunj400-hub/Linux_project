@@ -10,19 +10,6 @@ export BACKUP_DIR="./backup"    # 백업 파일이 저장될 폴더
 mkdir -p "$TARGET_DIR"
 mkdir -p "$BACKUP_DIR"
 
-# ==========================================
-# 🚧 2. 팀원 B 기능 (Placeholders)
-# ==========================================
-# 기능 1: 자동 분류 (팀원 B 담당)
-function func_organize() {
-    echo "구현x"
-}
-
-# 기능 2: 오래된 파일 정리 (팀원 B 담당)
-function func_clean() {
-    echo "구현x"
-}
-
 # 기능 3: 압축 백업 (tar 명령어 활용)
 function func_backup() {
     echo "전체 파일을 압축하여 백업합니다."
@@ -73,10 +60,10 @@ while true; do
     read CHOICE
 
     case $CHOICE in
-        1) func_organize ;;  # B's task
-        2) func_clean ;;     # B's task
-        3) func_backup ;;    # A's task (Implemented)
-        4) func_search ;;    # A's task (Implemented)
+        1) ./sort_files.sh ;;  
+        2) ./clean_files.sh ;;     
+        3) func_backup ;;    
+        4) func_search ;;    
         0) echo "프로그램을 종료합니다."; break ;;
         *) echo "잘못된 입력입니다." ;;
     esac
