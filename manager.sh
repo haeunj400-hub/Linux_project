@@ -9,7 +9,22 @@ export BACKUP_DIR="./backup"    # 백업 파일이 저장될 폴더
 mkdir -p "$TARGET_DIR"
 mkdir -p "$BACKUP_DIR"
 
-# 기능 3: 압축 백업 (tar 명령어 활용)
+#기능 1: 파일 분류
+function func_organize() {
+    echo "파일 분류 기능을 실행합니다."
+    
+    # 별도 파일인 sort_files.sh를 현재 디렉토리(./)에서 실행
+    ./sort_files.sh 
+}
+
+# 기능 2: 오래된 파일 정리
+function func_clean() {
+    echo "오래된 파일을 정리합니다."
+    
+    # 별도 파일인 clean_files.sh를 현재 디렉토리(./)에서 실행
+    ./clean_files.sh
+}
+# 기능 3: 압축 백업
 function func_backup() {
     echo "전체 파일을 압축하여 백업합니다."
     
@@ -58,8 +73,8 @@ while true; do
     read CHOICE
 
     case $CHOICE in
-        1) ./sort_files.sh ;;  
-        2) ./clean_files.sh ;;     
+        1) fun_organize ;;  
+        2) fun_clean ;;     
         3) func_backup ;;    
         4) func_search ;;    
         0) echo "프로그램을 종료합니다."; break ;;
