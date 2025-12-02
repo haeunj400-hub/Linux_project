@@ -22,7 +22,7 @@ for file in *; do
             txt|pdf|doc|docx|md) folder="문서" ;;   #문서파일
             sh|c|cpp|py|java) folder="코드" ;;      #코드파일
             zip|tar|gz|7z) folder="압축" ;;         #압축파일
-            *) folder="Others" ;;                  #기타파일
+            *) folder="etc" ;;                  #기타파일
         esac
 
         mkdir -p "$folder"          #폴더가 없으면 생성
