@@ -73,8 +73,8 @@ while true; do
     read CHOICE
 
     case $CHOICE in
-        1) fun_organize ;;  
-        2) fun_clean ;;     
+        1) func_organize ;;  
+        2) func_clean ;;     
         3) func_backup ;;    
         4) func_search ;;    
         0) echo "프로그램을 종료합니다."; break ;;
