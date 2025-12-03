@@ -7,7 +7,7 @@ if [ -z "$TARGET_DIR" ]; then
     echo -n "정리할 폴더 경로를 입력하세요."
     read TARGET_DIR
     
-    #사용자 입력후에도 경로가 여전히 비어있다면 스크립트 종료
+    #사용자 입력후에도 경로가 여전히 비어 있다면 종료
     if [ -z "$TARGET_DIR" ]; then
         echo "경로가 입력되지 않아 종료합니다."
         exit 1
@@ -28,7 +28,7 @@ for file in *; do
             txt|pdf|doc|docx|md) folder="문서" ;;   #문서파일
             sh|c|cpp|py|java) folder="코드" ;;      #코드파일
             zip|tar|gz|7z) folder="압축" ;;         #압축파일
-            *) folder="etc" ;;                  #기타파일
+            *) folder="etc" ;;                     #기타파일
         esac
 
         mkdir -p "$folder"          #폴더가 없으면 생성
